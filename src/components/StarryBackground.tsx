@@ -140,7 +140,11 @@ const StarryBackground = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed inset-0 -z-50" />;
+  return (
+    <div className="absolute inset-0 -z-10">
+      <canvas ref={canvasRef} className="fixed inset-0 -z-50" />;
+    </div>
+  );
 };
 
 export default StarryBackground;
