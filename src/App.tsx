@@ -1,15 +1,12 @@
-import Navbar from "./components/Navbar";
-import StarryBackground from "./components/StarryBackground";
+import { Outlet } from "react-router";
+import Public from "./layouts/Public";
 
 function App() {
   return (
     <>
-      <StarryBackground />
-      <div className="relative z-50">
-        <Navbar />
-      </div>
-
-      <div>start</div>
+      <Public>
+        <Outlet />
+      </Public>
     </>
   );
 }
