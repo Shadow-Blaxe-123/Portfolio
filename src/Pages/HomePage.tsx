@@ -1,4 +1,5 @@
 import HeroSection from "@/components/modules/Home/HeroSection";
+import FeaturedProjects from "@/components/modules/Home/ProjectSection";
 
 function HomePage() {
   return (
@@ -7,7 +8,9 @@ function HomePage() {
         <HeroSection />
       </section>
       <section>Even more content</section>
-      <section id="projects">More content here</section>
+      <section id="projects">
+        <FeaturedProjects />
+      </section>
     </div>
   );
 }
