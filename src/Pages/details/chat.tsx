@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router";
 
-function ParcelDeliveryDetails() {
+function ChatAppDetails() {
   return (
     <div className="min-h-screen px-6 py-12 bg-background">
       <div className="max-w-4xl mx-auto space-y-8">
@@ -10,20 +10,20 @@ function ParcelDeliveryDetails() {
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle className="text-3xl font-bold">
-              Parcel Delivery Frontend
+              Vanilla Chat Web App
             </CardTitle>
           </CardHeader>
           <CardContent>
             <img
-              src="/projects/parcel.png"
-              alt="Parcel Delivery Frontend"
+              src="/projects/chat.png"
+              alt="Vanilla Chat Web App"
               className="w-full object-contain rounded-md mb-4"
             />
             <p className="mb-4">
-              This is a fullstack application for a Parcel Delivery System,
-              built with React.js, Redux Toolkit, and RTK Query. The platform
-              allows Senders, Receivers, and Admins to perform parcel
-              operations, manage records, and track deliveries seamlessly.
+              A lightweight real-time chat application built using vanilla
+              JavaScript, HTML, and CSS for the frontend, and Node.js +
+              Socket.io for the backend. Users can join chat rooms, send
+              messages in real-time, and see active users.
             </p>
           </CardContent>
         </Card>
@@ -35,13 +35,11 @@ function ParcelDeliveryDetails() {
           </CardHeader>
           <CardContent>
             <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-              <li>React.js + React Router</li>
-              <li>Redux Toolkit & RTK Query</li>
-              <li>TypeScript</li>
-              <li>Tailwind CSS</li>
-              <li>Node.js + Express.js (backend reference)</li>
-              <li>MongoDB + Mongoose</li>
-              <li>JWT & bcrypt</li>
+              <li>HTML, CSS, Vanilla JavaScript</li>
+              <li>Node.js + Express.js</li>
+              <li>Socket.io for real-time communication</li>
+              <li>HTML DOM manipulation for chat UI</li>
+              <li>Optional: Tailwind CSS for styling</li>
             </ul>
           </CardContent>
         </Card>
@@ -53,15 +51,12 @@ function ParcelDeliveryDetails() {
           </CardHeader>
           <CardContent>
             <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-              <li>Public Landing (Home, About, Contact, Tracking)</li>
-              <li>Authentication with JWT</li>
-              <li>Sender Dashboard (create, cancel, view parcels)</li>
-              <li>Receiver Dashboard (view, confirm parcels)</li>
-              <li>Admin Dashboard (manage users & parcels)</li>
-              <li>Parcel Tracking with status logs</li>
-              <li>Form validations, filtering, pagination</li>
-              <li>Loading indicators & global error handling</li>
-              <li>Toast notifications for feedback</li>
+              <li>Real-time messaging with Socket.io</li>
+              <li>Multiple chat rooms</li>
+              <li>Display active users in each room</li>
+              <li>Message timestamps</li>
+              <li>Responsive UI for desktop and mobile</li>
+              <li>Lightweight and fast, no frontend framework required</li>
             </ul>
           </CardContent>
         </Card>
@@ -77,4 +72,4 @@ function ParcelDeliveryDetails() {
   );
 }
 
-export default ParcelDeliveryDetails;
+export default ChatAppDetails;

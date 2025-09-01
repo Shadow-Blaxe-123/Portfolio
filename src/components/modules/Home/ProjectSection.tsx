@@ -14,6 +14,22 @@ const projects = [
     description: "A full-stack book tracking app with MERN stack.",
     image: "/projects/library.png", // no "public/"
     liveLink: "https://assignment-4-eta-seven.vercel.app/",
+    route: "/projects/library",
+  },
+  {
+    title: "Parcel Delivery Frontend",
+    description:
+      "A React + Redux-based frontend for managing parcel delivery with role-based dashboards.",
+    image: "/projects/parcel.png", // no "public/"
+    liveLink: "https://assignment-4-eta-seven.vercel.app/",
+    route: "/projects/parcel",
+  },
+  {
+    title: "Chat App",
+    description:
+      "A real-time chat application built with HTML, CSS, JavaScript and Socket.io.",
+    image: "/projects/chat.png",
+    route: "/projects/chat",
   },
 ];
 
@@ -47,7 +63,7 @@ export default function FeaturedProjects() {
         Featured Projects
       </h2>
 
-      <div className="grid gap-8 sm:grid-cols-1">
+      <div className="grid gap-8 sm:grid-cols-3">
         {projects.map((project, index) => (
           <Card
             key={index}
@@ -71,17 +87,21 @@ export default function FeaturedProjects() {
             </CardContent>
 
             <CardFooter className="px-4 pb-4 flex gap-2">
-              <Button asChild variant="outline" className="">
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project
-                </a>
-              </Button>
+              {project.liveLink && (
+                <Button asChild variant="outline" className="">
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Project
+                  </a>
+                </Button>
+              )}
               <Button asChild variant="secondary" className="">
-                <Link to="/details">View Details</Link>
+                <Link to={project.route as string} target="_blank">
+                  View Details
+                </Link>
               </Button>
             </CardFooter>
           </Card>
