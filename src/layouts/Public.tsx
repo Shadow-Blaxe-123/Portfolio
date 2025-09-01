@@ -5,14 +5,14 @@ import type { ReactNode } from "react";
 function Public({ children }: { children: ReactNode }) {
   return (
     <div className="relative min-h-screen">
-      {/* Background stays behind everything */}
+      {/* Background */}
       <StarryBackground />
 
-      {/* Navbar */}
-      <Navbar />
-
-      {/* Main content: push it below the Navbar */}
-      <main className="pt-16 relative z-50">{children}</main>
+      {/* Navbar and content */}
+      <div className="relative z-50 flex flex-col">
+        <Navbar />
+        <main>{children}</main>
+      </div>
     </div>
   );
 }

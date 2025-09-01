@@ -13,16 +13,16 @@ import {
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home" },
+  { href: "#hero", label: "Home" },
   { href: "#", label: "Blog" },
-  { href: "#", label: "Projects" },
+  { href: "#projects", label: "Projects" },
   { href: "#", label: "Contact" },
 ];
 
 export default function Navbar() {
   return (
     // <header className="border-b px-4 md:px-6">
-    <header className="border-b px-4 md:px-6 fixed top-0 w-full z-50 bg-black/60 backdrop-blur-md">
+    <header className="border-b px-4 md:px-6 sticky top-0 w-full z-50 bg-black/60 backdrop-blur-md">
       <div className="flex h-16 items-center justify-between gap-4">
         {/* Left side */}
         <div className="flex items-center gap-2">
