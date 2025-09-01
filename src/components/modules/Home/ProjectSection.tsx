@@ -6,26 +6,20 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const projects = [
   {
     title: "Library Management System",
     description: "A full-stack book tracking app with MERN stack.",
-    image: "public/projects/Library.png",
-    link: "https://assignment-4-eta-seven.vercel.app/",
-  },
-  {
-    title: "Parcel Delivery Service",
-    description: "An platform to send and receive parcels.",
-    image: "/public/projects/parcel.png",
-    link: "https://parcel-delivery-sy-stem-frontend.vercel.app/",
+    image: "/projects/library.png", // no "public/"
+    liveLink: "https://assignment-4-eta-seven.vercel.app/",
   },
 ];
 
 export default function FeaturedProjects() {
   const [visible, setVisible] = useState(false);
 
-  // Fade in on scroll
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("projects");
@@ -36,14 +30,14 @@ export default function FeaturedProjects() {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // trigger on load
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section
+    <div
       id="projects"
-      className="py-20 bg-gray-900 text-white px-4 transition-opacity duration-700"
+      className="py-20 bg-gray-900 text-white px-6 sm:px-20 transition-opacity duration-700 w-full"
     >
       <h2
         className={`text-4xl font-bold text-center mb-12 transition-all duration-700 ${
@@ -53,42 +47,46 @@ export default function FeaturedProjects() {
         Featured Projects
       </h2>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-1">
         {projects.map((project, index) => (
           <Card
             key={index}
             className={`bg-gray-800 hover:bg-gray-700 transition-all duration-300 shadow-lg transform ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
-            style={{ transitionDelay: `${index * 150}ms` }}
+            style={{ transitionDelay: `${index * 200}ms` }}
           >
-            <CardHeader className="p-0 overflow-hidden rounded-t-lg">
+            {/* Image Container with Peek Effect */}
+            <CardHeader className="p-0 overflow-hidden rounded-t-lg bg-gray-950 flex items-center justify-center h-56">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-105"
+                className="max-h-full max-w-full object-contain transform transition-transform duration-300 hover:scale-105"
               />
             </CardHeader>
 
             <CardContent className="px-4 py-3">
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-300">{project.description}</p>
+              <p className="text-gray-300 text-sm">{project.description}</p>
             </CardContent>
 
-            <CardFooter className="px-4 pb-4">
-              <Button asChild variant="outline" className="w-full">
+            <CardFooter className="px-4 pb-4 flex gap-2">
+              <Button asChild variant="outline" className="">
                 <a
-                  href={project.link}
+                  href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   View Project
                 </a>
               </Button>
+              <Button asChild variant="secondary" className="">
+                <Link to="/details">View Details</Link>
+              </Button>
             </CardFooter>
           </Card>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

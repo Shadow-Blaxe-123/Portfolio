@@ -16,7 +16,7 @@ import { Link } from "react-router";
 const navigationLinks = [
   { href: "/", label: "Home", isSection: false },
   { href: "/blog", label: "Blog", isSection: false },
-  { href: "projects", label: "Projects", isSection: true }, // section ID
+  { href: "/projects", label: "Projects", isSection: false }, // section ID
   { href: "contact", label: "Contact", isSection: true },
 ];
 

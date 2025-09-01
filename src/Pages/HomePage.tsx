@@ -8,7 +8,7 @@ function HomePage() {
         <HeroSection />
       </section>
       <section>Even more content</section>
-      <section id="projects">
+      <section id="projects" className="flex justify-center">
         <FeaturedProjects />
       </section>
     </div>
