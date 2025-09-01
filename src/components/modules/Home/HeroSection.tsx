@@ -45,10 +45,18 @@ function HeroSection() {
           where I can contribute and continue growing.
         </span>
       </p>
-
-      <Button className="px-8 py-3 text-lg bg-cyan-500 hover:bg-cyan-600 text-black opacity-0 animate-fadeIn delay-400 flex items-center gap-2">
-        View Resume <ArrowDownToLine />
-      </Button>
+      <div className="flex justify-center mt-8">
+        {/* View Online */}
+        <a
+          href="/resume.pdf" // put your PDF inside "public" folder
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="px-8 py-3 text-lg bg-cyan-500 hover:bg-cyan-600 text-black opacity-0 animate-fadeIn delay-400 flex items-center gap-2">
+            View Resume <ArrowDownToLine />
+          </Button>
+        </a>
+      </div>
 
       {/* Scroll down indicator */}
       <div
