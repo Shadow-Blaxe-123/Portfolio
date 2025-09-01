@@ -1,4 +1,4 @@
-import Nav from "./components/Nav";
+import Navbar from "./components/Navbar";
 import StarryBackground from "./components/StarryBackground";
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <>
       <StarryBackground />
       <div className="relative z-50">
-        <Nav />
+        <Navbar />
       </div>
 
       <div>start</div>
