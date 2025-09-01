@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Contact from "@/components/modules/Home/Contact";
 import HeroSection from "@/components/modules/Home/HeroSection";
 import FeaturedProjects from "@/components/modules/Home/ProjectSection";
@@ -18,6 +19,9 @@ function HomePage() {
       <section id="contact">
         <Contact />
       </section>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

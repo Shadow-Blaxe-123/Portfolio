@@ -19,16 +19,16 @@ function Contact() {
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-primary" />
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:shamunahmed38@gmail.com"
                 className="hover:underline"
               >
-                your.email@example.com
+                shamunahmed38@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-primary" />
               <a href="tel:+1234567890" className="hover:underline">
-                +123 456 7890
+                +8801620670724
               </a>
             </div>
           </CardContent>
