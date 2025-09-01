@@ -10,14 +10,27 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Link } from "react-router";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#hero", label: "Home" },
-  { href: "#", label: "Blog" },
-  { href: "#projects", label: "Projects" },
-  { href: "#", label: "Contact" },
+  { href: "/", label: "Home", isSection: false },
+  { href: "/blog", label: "Blog", isSection: false },
+  { href: "projects", label: "Projects", isSection: true }, // section ID
+  { href: "contact", label: "Contact", isSection: true },
 ];
+
+const handleScroll = (href: string, isSection?: boolean) => {
+  if (isSection) {
+    const element = document.getElementById(href);
+    if (element) {
+      const yOffset = -64; // offset for sticky navbar
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
+};
 
 export default function Navbar() {
   return (
@@ -69,8 +82,17 @@ export default function Navbar() {
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
-                      <NavigationMenuLink href={link.href} className="py-1.5">
-                        {link.label}
+                      <NavigationMenuLink
+                        className="text-foreground hover:text-primary py-1.5 font-black"
+                        asChild
+                      >
+                        {link.isSection ? (
+                          <button onClick={() => handleScroll(link.href, true)}>
+                            {link.label}
+                          </button>
+                        ) : (
+                          <Link to={link.href}>{link.label}</Link>
+                        )}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
@@ -86,10 +108,16 @@ export default function Navbar() {
                 {navigationLinks.map((link, index) => (
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
-                      href={link.href}
                       className="text-foreground hover:text-primary py-1.5 font-black"
+                      asChild
                     >
-                      {link.label}
+                      {link.isSection ? (
+                        <button onClick={() => handleScroll(link.href, true)}>
+                          {link.label}
+                        </button>
+                      ) : (
+                        <Link to={link.href}>{link.label}</Link>
+                      )}
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
